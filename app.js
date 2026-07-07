@@ -1,35 +1,58 @@
-document.addEventListener("DOMContentLoaded", function () {
+document.addEventListener("DOMContentLoaded", () => {
 
-    let count = 0;
+let count = Number(localStorage.getItem("count")) || 0;
 
-    const button = document.getElementById("scanButton");
+const countText = document.getElementById("count");
+const prize = document.getElementById("prize");
 
-    const prize = document.getElementById("prize");
+update();
 
-    const counter = document.getElementById("count");
+document.getElementById("scanButton").addEventListener("click",()=>{
 
-    button.addEventListener("click", function () {
+if(count>=3)return;
 
-        if(count < 3){
+count++;
 
-            count++;
+localStorage.setItem("count",count);
 
-            counter.innerHTML = count + " / 3";
+update();
 
-            if(count == 2){
+});
 
-                prize.innerHTML = "🎁 景品交換できます！";
+function update(){
 
-            }
+countText.innerHTML=count+" / 3";
 
-            if(count == 3){
+document.getElementById("mitsugi").innerHTML=count>=1?"✅ 御調イベント":"⬜ 御調イベント";
 
-                prize.innerHTML = "👑 豪華景品GET！";
+document.getElementById("mukaishima").innerHTML=count>=2?"✅ 向島イベント":"⬜ 向島イベント";
 
-            }
+document.getElementById("setoda").innerHTML=count>=3?"✅ 瀬戸田イベント":"⬜ 瀬戸田イベント";
 
-        }
+if(count==0){
 
-    });
+prize.innerHTML="スタンプを集めよう！";
+
+}
+
+if(count==1){
+
+prize.innerHTML="あと1つで景品！";
+
+}
+
+if(count==2){
+
+prize.innerHTML="🎁 景品交換できます！";
+
+}
+
+if(count==3){
+
+prize.innerHTML="👑 豪華景品GET！";
+
+}
+
+}
 
 });
