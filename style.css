@@ -1,0 +1,63 @@
+body{
+    margin:0;
+    padding:0;
+    font-family:Arial, sans-serif;
+    background:#f2f5f8;
+}
+
+header{
+    background:#0b73d9;
+    color:white;
+    text-align:center;
+    padding:20px;
+}
+
+main{
+    padding:20px;
+}
+
+.stamp-card{
+    background:white;
+    border-radius:15px;
+    padding:20px;
+    box-shadow:0 3px 10px rgba(0,0,0,0.15);
+    margin-bottom:20px;
+}
+
+.stamp{
+    font-size:22px;
+    margin:15px 0;
+}
+
+button{
+    width:100%;
+    background:#0b73d9;
+    color:white;
+    border:none;
+    border-radius:12px;
+    padding:18px;
+    font-size:20px;
+    cursor:pointer;
+}
+
+button:hover{
+    background:#095cb0;
+}
+
+section{
+    background:white;
+    border-radius:15px;
+    padding:20px;
+    margin-top:20px;
+    box-shadow:0 3px 10px rgba(0,0,0,0.15);
+}
+
+h1,h2,h3{
+    margin-top:0;
+}
+
+a{
+    text-decoration:none;
+    color:#0b73d9;
+    font-weight:bold;
+}
